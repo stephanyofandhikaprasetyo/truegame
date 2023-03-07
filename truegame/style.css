@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+:root{
+    --main-color:#223160;
+    --black:#13131a;
+    --bg:#184e73;
+    --border:.1rem solid rgb(255, 255, 255);
+}
+
+*{
+    font-family: 'Oswald', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: 5rem;
+}
+
+body{
+    background: var(--bg);
+}
+
+section{
+    padding:2rem 7%;
+}
+
+.heading{
+    text-align: center;
+    color:#fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.heading span{
+    color:var(--main-color);
+    text-transform: uppercase;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.9rem 3rem;
+    font-size: 1.7rem;
+    color:#fff;
+    background: var(--main-color);
+    cursor: pointer;
+}
+
+.btn:hover{
+    letter-spacing: .2rem;
+}
+
+.header{
+    background: var(--bg);
+    background-color: #FBFBFB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.5rem 10%;
+    border-bottom: var(--border);
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .logo img{
+    height: 6rem;
+}
+
+
+.header .navbar a{
+    margin:0 1rem;
+    font-size: 1.6rem;
+    color:#EB6B94;
+}
+
+.header .navbar a:hover{
+    color:var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.header .icons div{
+    color:#fff;
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.header .icons div:hover{
+    color:var(--main-color);
+}
+
+#menu-btn{
+    display: none;
+}
+
+.header .search-form{
+    position: absolute;
+    top:115%; right: 7%;
+    background: #fff;
+    width: 50rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header .search-form.active{
+    transform: scaleY(1);
+}
+
+.header .search-form input{
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding:1rem;
+    text-transform: none;
+}
+
+.header .search-form label{
+    cursor: pointer;
+    font-size: 2.2rem;
+    margin-right: 1.5rem;
+    color:var(--black);
+}
+
+.header .search-form label:hover{
+    color:var(--main-color);
+}
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #4A9ACF;
+}
+
+.home .content{
+    max-width: 60rem;
+    padding-bottom: rem;
+    padding-left: 8rem;
+    width: 300px;
+    height:1rem;
+
+}
+
+.home .content .img{
+    max-width: 60rem;
+    padding-bottom: rem;
+    padding-left: 8rem;
+    width: 300px;
+    height:800px;
+
+}
+
+
+.home .content .btn{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 0;
+    color:#eee;
+}
+
+.home .content .p{
+    font-size: 500%;
+}
+
+.typo {
+    size: 100%;
+}
+
+.review .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.review .box-container .box{
+    text-align: center;
+    border:var(--border);
+    padding: 2rem;
+}
+
+.review .box-container .box .icons a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    border:var(--border);
+    color:#fff;
+    margin:.3rem;
+}
+
+.review .box-container .box .icons a:hover{
+    background:var(--main-color);
+}
+
+.review .box-container .box .image{
+    padding: 2.5rem 0;
+}
+
+.review .box-container .box .image img{
+    height: 25rem;
+}
+
+.review .box-container .box .content h3{
+    color:#fff;
+    font-size: 2.5rem;
+}
+
+.review .box-container .box .content .stars{
+    padding: 1.5rem;
+}
+
+.review .box-container .box .content .stars i{
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+
+.review .box-container .box .content .price{
+    color:#fff;
+    font-size: 2.5rem;
+}
+
+.review .box-container .box .content .price span{
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1.5rem;
+}

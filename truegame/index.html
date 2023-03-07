@@ -1,0 +1,107 @@
+<?php
+require 'config.php';
+if(!empty($_SESSION["id"])) {
+    $id = $_SESSION["id"];
+    $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = $id");
+    $row = mysqli_fetch_assoc($result);
+}
+else {
+    header("Location: login.php");
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truegame</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+<header class="header">
+
+
+        <a href="#" class="logo">
+            <img src="img/Logo TrueGame.png" alt="">
+        </a>
+        <h1>Welcome <?php echo $row["nickname"];?></h1>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="forum.php">forum</a>
+            <a href="video.php">guide</a>
+            <a href="#review">review</a>
+            <a href="logout.php">Logout</a>
+            </nav>
+</header>
+<section class="home" id="home">
+
+    
+    
+
+    <div class="content">
+        <img src="img/frame1.png" alt="" class="typo">
+        <h4>Welcome to Truegame where you can create a forum thread, watch or read a guide, and view a review for a game</h4>
+    </div>
+</section>
+
+<section class="review" id="review">
+
+    <h1 class="heading"><span>review</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            
+            <div class="image">
+                <a href="reviewbf1.php">
+                <img src="img/battlefield_PNG4.png" alt="" style="width: 300px; height: 100px;">
+                </a>
+            </div>
+            <div class="content">
+                <h3>Battlefield 1</h3>
+                
+               
+            </div>
+        </div>
+
+        <div class="box">
+            
+            <div class="image">
+                <a href="reviewow2.php">
+                <img src="img/overwatch.png" alt="" style="width: 300px; height: 200px;">
+                </a>
+            </div>
+            <div class="content">
+                <h3>Overwatch 2</h3>
+               
+               
+            </div>
+        </div>
+
+        <div class="box">
+            
+            <div class="image">
+                <a href="reviewdota2.php">
+                <img src="img/dota2.png" alt="">
+                </a>
+            </div>
+            <div class="content">
+                <h3>Dota 2</h3>
+               
+                
+            </div>
+        </div>
+
+    </div>
+
+</section>

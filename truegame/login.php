@@ -1,0 +1,60 @@
+<?php
+require 'config.php';
+if(!empty($_SESSION["id"])) {
+    header("Location:index.php");
+}
+if(isset($_POST["submit"])) {
+	$usernameemail = $_POST["usernameemail"];
+	$password = $_POST["password"];
+	$result = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$usernameemail' Or password = '$password'");
+	$row = mysqli_fetch_assoc($result);
+	if(mysqli_num_rows($result) > 0) {
+		if($password == $row["password"]) {
+			$_SESSION["login"] = true;
+			$_SESSION["id"] = $row["id"];
+			header("Location:index.php");
+		}
+		else {
+			echo
+			"<script> alert('Wrong Password'); </script>";
+		}
+	}
+	else {
+		echo
+		"<script> alert('No Yet Registered'); </script>";
+	}
+}
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animated Login Form</title>
+	<link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<div class="box">
+		<form action="" method="post" autocomplete="off">
+			<h2>Sign in</h2>
+			<div class="inputBox">
+			<span>Username</span>
+			<input type="text" name="usernameemail" id="usernameemail" required value=""> <br>
+				
+				<i></i>
+			</div>
+			<div class="inputBox">
+			<span>Password</span>
+			<input type="password" name="password" id="password"required value=""> <br>
+				<i></i>
+			</div>
+			<div class="links">
+				<a href="register.php">Signup</a>
+			</div>
+			<button type="submit" name="submit" value="login">Login</button>
+		</form>
+	</div>
+</body>
+</html>
